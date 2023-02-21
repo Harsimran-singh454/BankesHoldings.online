@@ -17,14 +17,16 @@
         @endif
         @csrf
 
-            <div class="Userlog-form-elements">
-
+            <div class="log-form-elements">
+            <div>
                 <label for="email">E-mail:</label>
                 <input type="email" name="email" id="email">
-                <br>
+            </div>
+
+            <div>
                 <label for="password"> Password: </label>
                 <input type="password" name="password" id="password">
-                <br>
+            </div>
                 <input class="log-btn" value="Login" type="submit">
 
             </div>

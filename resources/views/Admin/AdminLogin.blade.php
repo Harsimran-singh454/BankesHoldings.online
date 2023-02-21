@@ -16,19 +16,18 @@
         @endif
         @csrf
 
-            <div class="adminlog-form-elements">
+            <div class="log-form-elements">
+            <div>
                 <label for="email">E-mail:</label>
                 <input type="email" name="email" id="email">
                 @error('email')**{{$message}}@enderror
+            </div>
 
-                <br>
-
+            <div>
                 <label for="password"> Password: </label>
                 <input type="password" name="password" id="password">
                 @error('password')**{{$message}}@enderror
-
-                <br>
-
+            </div>
                 <input class="log-btn" value="Login" type="submit">
             </div>
             <p>Are you a client? <a href="{{route('cltlogin')}}"> Click here </a>to login</p>

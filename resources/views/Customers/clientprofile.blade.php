@@ -7,8 +7,7 @@
     <hr style="width:30%">
 
     <main class="client-profile-grid">
-
-        <div class="boxA">
+        <div>
             <section id="details-card">
                 <h2>Your Details</h2>
                 <div class="details-content">
@@ -18,6 +17,19 @@
                     <p><strong>Current Balance :</strong> {{$info[0]['current_balance']}}</p>
                 </div>
             </section>
+        </div>
+
+        <div>
+            <section id="payment-card">
+                <h2>Make Payments</h2>
+                <div class="payment-content">
+                    <h3>Click on the button below for payment options.</h3>
+                    <form action="{{route('paymentsCard')}}">
+                        <input style = "width:100px; background-color:rgb(54, 176, 35); color:white;" type="submit" value="Pay">
+                    </form>
+                </div>
+            </section>
+        </div>
 
             <section id="invoices-card" style="display:none;">
                 <h2>Invoices</h2>
@@ -35,22 +47,6 @@
                 </div>
             </section>
 
-        </div>
-
-
-        <div class="boxB">
-
-            <section id="payment-card">
-                <h2>Make Payments</h2>
-                <div class="payment-content">
-                    <h3>Click on the button below for payment options.</h3>
-
-                    <form action="{{route('paymentsCard')}}">
-                        <input style = "width:100px; background-color:rgb(54, 176, 35); color:white;" type="submit" value="Pay">
-                    </form>
-                </div>
-            </section>
-
 
             <section id="statements-card" style="display:none;">
                 <h2>Account Statments</h2>
@@ -65,7 +61,6 @@
                     </ul>
                 </div>
             </section>
-        </div>
 
     </main>
 

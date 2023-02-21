@@ -16,8 +16,6 @@
     </header>
 
     <nav>
-
-
         <div class="nav-list">
             @if(Session::has('LoggedUser'))
             <a href="{{route('Dashboard')}}">Home</a>
@@ -43,7 +41,6 @@
 
         @elseif(Session::has('LoggedClient'))
         <div class="nav-dropdown">
-            <img src="/usericon.svg" alt="" onclick="toggle();">
             <div class="nav-dropdown-menu hide" id="menu">
                 <ul>
                     <li><a href="{{route('clientprofile')}}">Profile</a></li>
@@ -51,6 +48,7 @@
                 </ul>
             </div>
         </div>
+        <img src="/usericon.svg" alt="" onclick="toggle();">
         @endif
 
 

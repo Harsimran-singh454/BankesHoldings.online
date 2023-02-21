@@ -42,13 +42,29 @@ nav .nav-dropdown{
     flex-direction: row;
 }
 
-nav .nav-dropdown img{
-    width: 13%;
+nav img{
+    width: 2em;
 }
 
 nav .nav-dropdown-menu{
     position: absolute;
-    margin-left: 50px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+@media screen and (max-width:480px){
+    nav .nav-dropdown-menu{
+        position: fixed;
+        margin-top: 55px;
+        margin-left: 0px;
+    }
+
+    nav .nav-dropdown-menu ul li{
+        display: inline;
+        position: relative;
+        margin: 10em 0px;
+        padding: 10px 5px;
+    }
 }
 
 .hide{
@@ -56,8 +72,9 @@ nav .nav-dropdown-menu{
 }
 
 nav .nav-dropdown-menu ul{
+    margin: 0px;
     list-style: none;
-    padding: 10px 10px;
+    padding: 20px 10px;
     color: black;
     background-color: white;
 }
@@ -89,7 +106,7 @@ ul{
 
 .nav-list{
     display: flex;
-    align-items: center;
+    align-items: space-evenly;
     padding: 5px 20px;
 }
 
@@ -134,41 +151,42 @@ footer{
 }
 
 .form-container h1{
-    font-size: 45px
+    font-size: 3em
 }
 
-.adminlog-form-elements{
-    display: grid;
+.log-form-elements{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     grid-template-columns:2;
     text-align: left;
-    padding: 20px;
-    padding: 0.1% 33%;
+    padding: 2em;
 }
 
-.adminlog-form-elements input{
-    margin: 10px;
-    padding: 20px;
+.log-form-elements input{
+    margin: 1em;
+    padding: 1em 0em;
     border-radius: 20px;
-    width: 500px;
+    width: 18rem;
     border: 0.1px solid black;
     font-size: 19px;
 }
 
-.adminlog-form-elements label{
+.log-form-elements label{
     font-size: 20px;
 }
 
-.adminlog-form-elements .log-btn{
+.log-form-elements .log-btn{
     background-color:  rgb(0, 95, 173);
     color: white;
     font-size: 20px;
     width: 250px;
-    margin-left: 30%;
+
 }
 
 
 
-/*--------------------- USER-------------------  */
+/*--------------------- CLIENT LOGIN-------------------  */
 
 .Userlog-form-elements{
     display: grid;
@@ -237,16 +255,20 @@ footer{
 
 .acc-form{
     margin: 15px 5%;
-    padding: 3%;
-    padding-top:0px ;
-    /* background-color: palegreen; */
-    display: grid;
+    padding-top:0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content:space-around;
     grid-template-columns: 1fr 1fr;
 }
 
 .acc-form div{
-    padding: 10px;
+    margin: auto;
+    padding: 1px;
     text-align: left;
+    max-width: 20em;
+    min-width: 300px;
     font-size: 20px;
 }
 
@@ -268,16 +290,16 @@ footer{
     width: 2%;
 }
 
-.other{
-    margin-top: 10%;
+.acc-form .other{
+    margin-top: 2em;
 }
 .other .sub-btn{
+    margin: 2em;
     background-color:  rgb(0, 95, 173);
     color: white;
     font-size:20px;
-    height: 9%;
-    width: 30%;
-    margin: 10% 30%;
+    height: 3em;
+    width: 10em;
 }
 
 .radio-button{
@@ -302,6 +324,7 @@ footer{
 .wrapper{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin: 2%;
     padding:30px;
@@ -411,27 +434,26 @@ footer{
 .client-profile-grid{
     display: flex;
     flex-direction: row;
-    margin-top: 5%;
-    width: 100%;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .client-profile-grid div{
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    margin: 1rem;
+    min-width: 5em;
     background-color: rgba(175, 175, 175, 0.233);
     border-radius: 15px;
 }
 
 .client-profile-grid div section{
     background-color: rgb(255, 255, 255);
-    margin: 5%;
     min-width: 120px;
-    width: 500px;
-    height: auto;
-    margin: 60px;
+    min-width: 250px;
+    /* height: 1em; */
+    margin: 2em;
     border-radius: 15px;
 }
 
@@ -443,28 +465,22 @@ footer{
 }
 
 
-
-
 .client-profile-grid div section .details-content{
     display: flex;
     flex-direction: column;
     border-radius: 15px;
     background-color: white;
-    padding: 20px;
+    padding: 2em;
 }
 
 
-
-#payment-card{
-    height: 200px;
-}
 .client-profile-grid div section .payment-content{
     display: flex;
     flex-direction: column;
+    align-items: center;
     border-radius: 15px;
     background-color: white;
-    padding: 20px;
-    align-items: center;
+    padding: 2em;
 }
 .client-profile-grid div section .payment-content input{
     width: 30%;
