@@ -27,6 +27,8 @@
 
 
         @if(Session::has('LoggedUser'))
+
+
         <div class="nav-dropdown">
             <div class="nav-dropdown-menu hide" id="menu">
                 <ul>
@@ -37,9 +39,9 @@
             <img src="/usericon.svg" alt="" onclick="toggle();">
         </div>
 
-
-
         @elseif(Session::has('LoggedClient'))
+
+
         <div class="nav-dropdown">
             <div class="nav-dropdown-menu hide" id="menu">
                 <ul>
@@ -49,6 +51,8 @@
             </div>
         </div>
         <img src="/usericon.svg" alt="" onclick="toggle();">
+
+
         @endif
 
 
