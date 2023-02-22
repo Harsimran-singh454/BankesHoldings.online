@@ -71,13 +71,13 @@
                 </div>
                 <div class="items">
                     <ol style="list-style: none; text-align:center; text-decoration: none">
-                        <a href=""><li><h4>Collecting Payments</h4></li></a>
-                        <a href=""><li><h4>Cliq</h4></li></a>
-                        <a href=""><li><h4>Clock in / Clock out</h4></li></a>
-                        <a href=""><li><h4>Sales IQ (Live chat)</h4></li></a>
-                        <a href=""><li><h4>One</h4></li></a>
-                        <a href=""><li><h4>E-mail</h4></li></a>
-                        <a href=""><li><h4>Telus Business Connect</h4></li></a>
+                        <a href=""target="_blank"><li><h4>Collecting Payments</h4></li></a>
+                        <a href=""target="_blank"><li><h4>Cliq</h4></li></a>
+                        <a href=""target="_blank"><li><h4>Clock in / Clock out</h4></li></a>
+                        <a href=""target="_blank"><li><h4>Sales IQ (Live chat)</h4></li></a>
+                        <a href=""target="_blank"><li><h4>One</h4></li></a>
+                        <a href=""target="_blank"><li><h4>E-mail</h4></li></a>
+                        <a href="https://app.businessconnect.telus.com/welcome" target="_blank"><li><h4>Telus Business Connect</h4></li></a>
                     </ol>
                 </div>
 

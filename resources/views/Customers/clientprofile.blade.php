@@ -15,6 +15,8 @@
                     <p><strong>Account no. :</strong> {{$info[0]['account_number']}}</p>
                     <p><strong>Account Name :</strong> {{$info[0]['account_name']}}</p>
                     <p><strong>Account Type :</strong> {{$info[0]['account_type']}}</p>
+                    <p><strong>Amount Past Due :</strong> {{$info[0]['amount_past_due']}}</p>
+                    <p><strong>Status :</strong> {{$info[0]['status']}}</p>
                     <p><strong>Current Balance :</strong> {{$info[0]['current_balance']}}</p>
                 </div>
             </section>
