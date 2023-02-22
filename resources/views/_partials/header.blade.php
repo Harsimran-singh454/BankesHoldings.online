@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="/style.css">
     <script src="/main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+    <link rel="icon" type="" href="/Favicon.png">
 </head>
 
 <body>

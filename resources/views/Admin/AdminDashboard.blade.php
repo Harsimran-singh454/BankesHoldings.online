@@ -13,7 +13,7 @@
                     <h2>Admins</h2>
                     <div>
                         <a href="{{route('AdminRegister')}}"><button>Add</button></a>
-                        <a href=""><button>View All</button></a>
+                        {{-- <a href="{{route('')}}"><button>View All</button></a> --}}
                     </div>
                 </div>
 

@@ -15,12 +15,9 @@
 
                 @csrf
 
-                <div class="col-1">
+                <div class = "pi-section">
                     <fieldset>
                         <legend><h2>Personal Information</h2></legend>
-
-                    <div class = "pi-section">
-
                         <label for="account_number">Account Number:</label>
                         <input type="number" name="account_number" id="account_number" value="{{$account['account_number']}}">
                         <br>
@@ -44,13 +41,12 @@
                         <label for="pin">4-Digit Pin:</label>
                         <input type="number" maxlength="4" name="pin" id="pin" value="{{$account['pin']}}">
                         <br>
-
-                    </div>
                 </fieldset>
+            </div>
 
+            <div class = "acc-ownshp">
                 <fieldset>
                     <legend><h2>Account Ownership</h2></legend>
-                    <div class = "acc-ownshp">
 
                         <label for="account_owner">Account Owner:</label>
                         <input type="text" name="account_owner" id="account_owner" value="{{$account['account_owner']}}">
@@ -71,16 +67,12 @@
                         <label for="rating">Rating:</label>
                         <input type="text" name="rating" id="rating" value="{{$account['rating']}}">
                         <br>
-
-                    </div>
-                </div>
                 </fieldset>
+            </div>
 
-                <div class="col-2">
+            <div class = "Billing">
                 <fieldset>
                     <legend><h2>Billing</h2></legend>
-                    <div class = "Billing">
-
                         <label for="current_balance">Current Balance:</label>
                         <input type="number" name="current_balance" id="current_balance" value="{{$account['current_balance']}}">
                         <br>
@@ -111,16 +103,15 @@
 
                             <br>
                         </div>
-                    </div>
                 </fieldset>
+            </div>
                     <div class = "other">
-
                         <label for="modified_by">Modified By:</label>
                         <input type="text" name="modified_by" id="modified_by" value="{{old('modified_by')}}">
                         <br>
                         <input type="submit" value="Save"class="sub-btn">
                     </div>
-                </div>
+
                 </form>
                 @foreach ($errors->all() as $error)
                 {{ $error }}

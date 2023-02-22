@@ -1,6 +1,6 @@
 <head>
     @include('/_partials/header')
-    <title>Edit User</title>
+    <title>Edit {{$users['name']}}</title>
     <head>
 
     <body>

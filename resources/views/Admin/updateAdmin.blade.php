@@ -18,17 +18,21 @@
 
             @csrf
 
-                <div class="adminlog-form-elements">
+                <div class="log-form-elements">
 
+                    <div>
                     <label for="name">Name:</label>
                     <input type="text" name="name" id="name" value="{{$Admin->name}}">
-                    <br>
+                    </div>
                     @error('name')**{{$message}}  @enderror
+
+                    <div>
                     <label for="email">E-mail:</label>
                     <input type="email" name="email" id="email" value="{{$Admin->email}}">
-                    <br>
+                    </div>
                     @error('email')**{{$message}}  @enderror
 
+                    <div>
                     <label for="role">Role:</label>
                     <select style="margin:10px;
                                     padding:20px;
@@ -41,10 +45,12 @@
                             <option value="Superadmin">Superadmin</option>
                             <option value="">Just admin</option>
                     </select>
+                    </div>
 
+                    <div>
                     <label for="password"> Password: </label>
-                <input type="password" name="password" id="password" value="{{$Admin->password}}">
-                    <br>
+                    <input type="password" name="password" id="password" value="{{$Admin->password}}">
+                    </div>
                     <input class="log-btn" value="Save" type="submit">
 
                 </div>

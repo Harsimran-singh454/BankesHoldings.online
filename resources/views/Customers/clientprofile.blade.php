@@ -1,4 +1,5 @@
 @include("./_partials/header")
+<title>Welcome {{$info[0]['name']}}!</title>
 
 <body>
     <h1 style="text-align:center; margin:50px">Welcome, {{$info[0]['name']}}!</h1>

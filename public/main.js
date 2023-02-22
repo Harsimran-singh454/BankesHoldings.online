@@ -6,9 +6,13 @@ function toggle(){
 }
 
 
+    document.addEventListener("mouseup", ()=>{
+        var element = document.getElementById("menu");
+        element.classList.add('hide');
+    });
 
 
-// -----------------timer-------------------
+// -----------------timer---------------
 
 
 // let [seconds, minutes, hours] = [0,0,0];

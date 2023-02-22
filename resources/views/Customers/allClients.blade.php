@@ -1,5 +1,5 @@
 @include('_partials.header');
-
+<title>Clients List</title>
 
 <h1 style="text-align:center; margin:50px">List of Clients</h1>
 <table class="clients-table">

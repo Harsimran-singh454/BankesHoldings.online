@@ -1,6 +1,6 @@
 <head>
 @include('/_partials/header')
-<title>Add Bank</title>
+<title>Add Account</title>
 </head>
 
 <body>
@@ -9,11 +9,11 @@
 
         <form class="acc-form" action="{{ route('createAccount') }}" method="POST">
             @if(Session::get('Success'))
-            <p style="background-color:lightgreen; padding:10px">{{Session::get('Success')}}</p>
+            <p style="background-color:lightgreen; padding:20px">{{Session::get('Success')}}</p>
             @endif
 
             @if(Session::get('fail'))
-            <p style="background-color:red; padding:10px">{{Session::get('fail')}}</p>
+            <p style="background-color:red; padding:20px">{{Session::get('fail')}}</p>
             @endif
 
             @csrf

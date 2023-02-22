@@ -17,21 +17,23 @@
         @endif
         @csrf
 
-            <div class="adminlog-form-elements">
+            <div class="log-form-elements">
 
+                <div>
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" value="{{old('name')}}">
-                <br>
+                </div>
                 @error('name'){{$message}}  @enderror
 
+                <div>
                 <label for="email">E-mail:</label>
                 <input type="email" name="email" id="email" value="{{old('email')}}">
-                <br>
+                </div>
                 @error('email'){{$message}}  @enderror
 
-
+                <div>
                 <Label for="account_number">Account Number: </Label>
-                    <select style="margin:10px; padding:20px; border-radius:20px; width:500px; border: 0.1px solid black;
+                    <select style="margin:10px; padding:20px; border-radius:20px; width:16em; border: 0.1px solid black;
                     font-size: 19px;" id="account_number" name="account_number">
                             <option value="">-- Choose account -- </option>
                             @foreach ($acc as $ac)
@@ -39,10 +41,12 @@
                             <option value="{{$ac['account_number']}}">{{$ac['account_number']}}</option>
                             @endforeach
                     </select>
+                </div>
 
-                    <label for="password">Password:</label>
+                <div>
+                <label for="password">Password:</label>
                 <input type="password" name="password" id="password">
-                <br>
+                </div>
 
                 @error('passowrd'){{$message}}  @enderror
 

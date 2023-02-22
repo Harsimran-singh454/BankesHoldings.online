@@ -1,6 +1,6 @@
 <head>
 @include('/_partials/header')
-<title>User Registration</title>
+<title>Login</title>
 <head>
 
 <body>

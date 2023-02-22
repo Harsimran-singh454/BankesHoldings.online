@@ -1,6 +1,6 @@
 <head>
 @include('/_partials/header')
-<title>Admin Registration</title>
+<title>Add a New Admin</title>
 <head>
 
 <body>
@@ -17,19 +17,22 @@
         @endif
         @csrf
 
-            <div class="adminlog-form-elements">
-
+            <div class="log-form-elements">
+                <div>
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" value="{{old('name')}}">
-                <br>
+                </div>
                 @error('name')**{{$message}}  @enderror
+                <div>
                 <label for="email">E-mail:</label>
                 <input type="email" name="email" id="email" value="{{old('email')}}">
-                <br>
+                </div>
                 @error('email')**{{$message}}  @enderror
+                <div>
                 <label for="password"> Password: </label>
                 <input type="password" name="password" id="password">
-                <br>
+                </div>
+
                 <input class="log-btn" value="sign up" type="submit">
 
             </div>

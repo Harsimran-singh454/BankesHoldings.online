@@ -165,7 +165,7 @@ footer{
 
 .log-form-elements input{
     margin: 1em;
-    padding: 1em 0em;
+    padding: 1em 1em;
     border-radius: 20px;
     width: 18rem;
     border: 0.1px solid black;
@@ -259,7 +259,9 @@ footer{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-content:space-around;
+    align-content:space-evenly;
+    align-items: flex-start;
+    row-gap: 20px;
     grid-template-columns: 1fr 1fr;
 }
 
