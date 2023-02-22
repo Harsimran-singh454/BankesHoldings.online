@@ -6,10 +6,10 @@ function toggle(){
 }
 
 
-    document.addEventListener("mouseup", ()=>{
-        var element = document.getElementById("menu");
-        element.classList.add('hide');
-    });
+    // document.addEventListener("mouseup", ()=>{
+    //     var element = document.getElementById("menu");
+    //     element.classList.add('hide');
+    // });
 
 
 // -----------------timer---------------

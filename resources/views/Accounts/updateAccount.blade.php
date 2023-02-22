@@ -74,7 +74,7 @@
                 <fieldset>
                     <legend><h2>Billing</h2></legend>
                         <label for="current_balance">Current Balance:</label>
-                        <input type="number" name="current_balance" id="current_balance" value="{{$account['current_balance']}}">
+                        <input type="number" name="current_balance" id="current_balance" step="any" value="{{$account['current_balance']}}">
                         <br>
 
                         <label for="due_date">Due Date:</label>
@@ -82,11 +82,11 @@
                         <br>
 
                         <label for="amount_past_due">Amount Past Due:</label>
-                        <input type="number" name="amount_past_due" id="amount_past_due" value="{{$account['amount_past_due']}}">
+                        <input type="number" name="amount_past_due" id="amount_past_due" step="any" value="{{$account['amount_past_due']}}">
                         <br>
 
                         <label for="unbilled_charges">Unbilled Charges:</label>
-                        <input type="number" name="unbilled_charges" id="unbilled_charges" value="{{$account['unbilled_charges']}}">
+                        <input type="number" name="unbilled_charges" id="unbilled_charges" step="any" value="{{$account['unbilled_charges']}}">
                         <br>
 
                         <label for="status">Status:</label>

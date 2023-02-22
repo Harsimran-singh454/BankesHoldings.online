@@ -14,7 +14,7 @@
             <img src="/logof.png">
     </header>
 
-    <nav>
+    <nav onclick="hidemenu();">
         <div class="nav-list">
             @if(Session::has('LoggedUser'))
             <a href="{{route('Dashboard')}}">Home</a>
