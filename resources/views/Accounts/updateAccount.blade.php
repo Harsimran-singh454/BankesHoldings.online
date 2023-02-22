@@ -107,7 +107,7 @@
             </div>
                     <div class = "other">
                         <label for="modified_by">Modified By:</label>
-                        <input type="text" name="modified_by" id="modified_by" value="{{old('modified_by')}}">
+                        <input type="text" name="modified_by" id="modified_by" required value="{{old('modified_by')}}">
                         <br>
                         <input type="submit" value="Save"class="sub-btn">
                     </div>
