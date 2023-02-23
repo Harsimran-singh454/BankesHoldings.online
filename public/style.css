@@ -476,6 +476,17 @@ footer{
     padding: 2em;
 }
 
+.client-profile-grid div section .details-content a{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(8, 113, 199);
+    text-align: center;
+    margin: 5px auto;
+    width: 7em;
+    padding: 1em;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.293)
+}
 
 .client-profile-grid div section .payment-content{
     display: flex;

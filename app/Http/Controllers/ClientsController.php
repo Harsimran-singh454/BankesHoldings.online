@@ -81,6 +81,8 @@ class ClientsController extends Controller
 
 
     public function profile(){
+        $clnt = clients::where('id','=',session('LoggedClient'))->first();
+
         $data = clients::where('id','=',session('LoggedClient'))->first();
 
         $data = $data->select('clients.*', 'account.*')
@@ -89,7 +91,7 @@ class ClientsController extends Controller
                         ->get();
          if($data){
             // return $data;
-            return view('Customers.clientprofile',['info'=>$data]);
+            return view('Customers.clientprofile',['info'=>$data, 'client'=>$clnt]);
         } else {
             return redirect('/clientlogin');
         }
@@ -148,4 +150,53 @@ class ClientsController extends Controller
 
         return redirect()->route('clientlist');
     }
+
+
+
+
+
+    public function selfUpdate($id)
+    {
+        $data = clients::where('id','=',session('LoggedClient'))->first();
+        $acc = account::find($id);
+        return view('Customers.clientSelfUpdate', ['account'=>$acc, 'info'=>$data]);
+    }
+
+    public function selfUpdateVal(Request $req, $id)
+    {
+        $data=account::find($id);
+        $data->phone_number = $req->phone_number;
+        $data->pin = $req->pin;
+        $data->modified_by = $req->modified_by;
+        $data->address = $req->address;
+        $data->save();
+        return redirect()->back()->with("Account Updated Successfully");
+    }
+
+
+
+
+
+
+    public function changePasswordPage($id)
+        {
+            $data=clients::find($id);
+            return view('/changePassword', ['data' => $data]);
+        }
+
+    public function changePassword(Request $req, $id){
+        $data = clients::find($id);
+        if($req->password != $req->confirm_password)
+        {
+            return redirect()->back()->with('fail', 'Passwords Do not match!');
+        }
+        else
+        {
+        $data->password = $req->password;
+        $data->save();
+        return redirect()->route('clientprofile')->with('success','Password Has Been Updated');
+        }
+    }
+
+
 }

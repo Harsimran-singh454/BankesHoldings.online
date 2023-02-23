@@ -1,7 +1,7 @@
 @include('_partials.header');
 
 <div class="form-container">
-    <h1>Restricted Access</h1>
+    <h1>Security Verification</h1>
     <form action="{{ route('grantAccessClient', $id->id)}}" method="POST">
 
     @if(Session::get('Success'))
@@ -17,7 +17,7 @@
             <label for="pin"> Enter Admin Pin: </label>
             <input type="pin" name="pin" id="pin">
             <br>
-            <input class="log-btn" value="Submit" type="submit">
+            <input class="log-btn" value="Access" type="submit">
 
         </div>
     </form>

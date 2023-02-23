@@ -88,7 +88,7 @@
                     <input type="date" name="due_date" id="due_date" value="{{old('due_date')}}">
                     <br>
 
-                    <label for="amount_past_due">Amount Past Due:</label>
+                    <label for="amount_past_due">Past Due Amount:</label>
                     <input type="number" name="amount_past_due" id="amount_past_due" step="any" value="{{old('amount_past_due')}}">
                     <br>
 

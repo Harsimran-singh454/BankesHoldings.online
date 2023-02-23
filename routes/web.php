@@ -19,6 +19,9 @@ Route::get('/adminDashboard',[AdminController::class,'dashboard'])->name('Dashbo
 Route::get('alogout',[AdminController::class,'logout'])->name('logout');                     // logout logic
 
 
+Route::get('/updatepasswordA/{id}',[AdminController::class,'changePasswordPageA'])->name('changePasswordPageA');
+Route::post('/proccessingpasswordA/{id}',[AdminController::class,'changePasswordA'])->name('changePasswordA');
+
 
 
 //    ------   Client   ----------
@@ -29,6 +32,8 @@ Route::post('/cllog',[ClientsController::class,'clientlogin'])->name('clientlogi
 Route::get('logout',[ClientsController::class,'Clogout'])->name('Clogout');                   // logout logic
 Route::get('/clientlist',[ClientsController::class,'clientlist'])->name('clientlist');        //All clients
 
+
+
 // -----------clients crud---------------
 
 Route::post('clientcreate',[ClientsController::class,'clientcreate'])->name('clientcreate');       //create
@@ -36,6 +41,15 @@ Route::get('/clientprofile',[ClientsController::class,'profile'])->name('clientp
 // Route::get('updateclient/{id}',[ClientsController::class,'updateclient'])->name('updateclient');  //update page
 Route::post('saveedit/{id}',[ClientsController::class,'update'])->name('update');                  //update logic
 Route::any('deletesuccess/{id}',[ClientsController::class,'deleteclient'])->name('deleteclient');  // delete
+
+
+
+Route::get('/updatepassword/{id}',[ClientsController::class,'changePasswordPage'])->name('changePasswordPage');
+Route::post('/proccessingpassword/{id}',[ClientsController::class,'changePassword'])->name('changePassword');
+
+
+Route::get('/updatedetails/{id}',[ClientsController::class,'selfUpdate'])->name('selfUpdate');
+Route::post('/selfUpdateVal/{id}',[ClientsController::class,'selfUpdateVal'])->name('selfUpdateVal');
 
 
 
@@ -56,7 +70,6 @@ Route::post('/createAccount', [AccountController::class,'createAccount'])->name(
 Route::get('/updateaccount/{id}',[AccountController::class,'updateaccountpage'])->name('updateaccountpage');  //update page
 Route::post('/saveaccount/{id}',[AccountController::class,'updateaccount'])->name('updateaccount');                  //update logic
 Route::any('/accdeletesuccess/{id}',[AccountController::class,'deleteaccount'])->name('deleteaccount');  // delete
-
 
 
 

@@ -112,6 +112,30 @@ class AdminController extends Controller
 
             return redirect()->route('Dashboard');
     }
+
+
+
+    public function changePasswordPageA($id)
+        {
+            $data=admin::find($id);
+            //return $data;
+            return view('/changePassword', ['data' => $data]);
+        }
+
+    public function changePasswordA(Request $req, $id){
+        $data = admin::find($id);
+        if($req->password != $req->confirm_password)
+        {
+            return redirect()->back()->with('fail', 'Passwords Do not match!');
+        }
+        else
+        {
+        $data->password = $req->password;
+        $data->save();
+        return redirect()->route('Dashboard')->with('success','Password Has Been Updated');
+        }
+    }
+
 }
 
 

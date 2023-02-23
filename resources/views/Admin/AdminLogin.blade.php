@@ -7,6 +7,8 @@
     <div class="form-container">
         <h1>Admin Login</h1>
         <form action="{{ route('admlg') }}" method="POST">
+
+
         @if(Session::get('Success'))
         <p style="background-color:lightgreen; padding:10px">{{Session::get('Success')}}</p>
         @endif

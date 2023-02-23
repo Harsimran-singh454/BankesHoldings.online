@@ -31,7 +31,7 @@
             <div class="card">
 
                 <div class="ribbon">
-                    <h2>Customers</h2>
+                    <h2>Cx Online Portal</h2>
                     <div>
                         <a href="{{route('clientnew')}}"><button>Add</button></a>
                         <a href="{{route('clientlist')}}"><button>View All</button></a>
@@ -85,7 +85,10 @@
         </div>
     </main>
 
-
+<a href="{{route('changePasswordPageA', $info->id)}}" style="width:100%; text-align-last: end;
+    text-decoration: none;
+    color: gray;
+    display: block;">Change Password</a>
 </body>
 
 @include("_partials.footer")
