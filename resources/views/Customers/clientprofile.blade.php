@@ -16,8 +16,8 @@
                     <p><strong>Account no. :</strong> {{$info[0]['account_number']}}</p>
                     <p><strong>Account Name :</strong> {{$info[0]['account_name']}}</p>
                     <p><strong>Account Type :</strong> {{$info[0]['account_type']}}</p>
-                    <p><strong>Current Balance :</strong> {{$info[0]['current_balance']}}</p>
-                    <p><strong>Amount Past Due :</strong> {{$info[0]['amount_past_due']}}</p>
+                    <p><strong>Current Balance :</strong> ${{$info[0]['current_balance']}}</p>
+                    <p><strong>Amount Past Due :</strong> ${{$info[0]['amount_past_due']}}</p>
                     <a href="{{route("selfUpdate", $info[0]['id']) }}">Update</a>
                     <a href="{{route("changePasswordPage", $client['id'])}}">Change Password</a>
                 </div>
