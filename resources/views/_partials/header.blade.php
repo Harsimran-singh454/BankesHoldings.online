@@ -15,33 +15,34 @@
     </header>
 
     <nav onclick="hidemenu();">
-        <div class="nav-list">
+        {{-- <div class="nav-list">
             @if(Session::has('LoggedUser'))
             <a href="{{route('Dashboard')}}">Home</a>
 
             @elseif(Session::has('LoggedClient'))
             <a href="{{route('clientprofile')}}">Home</a>
             @endif
-        </div>
+        </div> --}}
 
 
         @if(Session::has('LoggedUser'))
 
 
         <div class="nav-dropdown">
+            <img src="/ico2.svg" alt="" onclick="toggle();">
             <div class="nav-dropdown-menu hide" id="menu">
                 <ul>
                     <li><a href="{{route('Dashboard')}}">Profile</a></li>
                     <li><a href="{{route('logout')}}">Logout</a></li>
                 </ul>
             </div>
-            <img src="/usericon.svg" alt="" onclick="toggle();">
         </div>
 
         @elseif(Session::has('LoggedClient'))
 
 
         <div class="nav-dropdown">
+            <img src="/ico2.svg" alt="" onclick="toggle();">
             <div class="nav-dropdown-menu hide" id="menu">
                 <ul>
                     <li><a href="{{route('clientprofile')}}">Profile</a></li>
@@ -49,7 +50,7 @@
                 </ul>
             </div>
         </div>
-        <img src="/usericon.svg" alt="" onclick="toggle();">
+
 
 
         @endif

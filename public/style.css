@@ -25,8 +25,8 @@ header img{
 nav{
     display: flex;
     background-color: rgb(0, 95, 173);
-    padding: 1% 2%;
-    justify-content: space-evenly;
+    padding: 2em 5em;
+    justify-content: flex-end;
 }
 
 .nav-list::before{
@@ -43,27 +43,25 @@ nav .nav-dropdown{
 }
 
 nav img{
-    width: 2em;
+    width: 3em;
 }
 
 nav .nav-dropdown-menu{
-    position: absolute;
-    margin-top: 0px;
-    margin-left: 0px;
+    border-radius: 20px;
+    margin: 0px;
+    padding: 0px;
 }
 
 @media screen and (max-width:480px){
     nav .nav-dropdown-menu{
-        position: fixed;
         margin-top: 55px;
         margin-left: 0px;
     }
 
     nav .nav-dropdown-menu ul li{
         display: inline;
-        position: relative;
-        margin: 10em 0px;
-        padding: 10px 5px;
+        /* margin: 10em 0px;
+        padding: 10px 5px; */
     }
 }
 
@@ -74,14 +72,15 @@ nav .nav-dropdown-menu{
 nav .nav-dropdown-menu ul{
     margin: 0px;
     list-style: none;
-    padding: 20px 10px;
+    padding: 10px;
     color: black;
     background-color: white;
 }
 
 nav .nav-dropdown-menu ul li{
     display: inline;
-    padding: 10px 10px;
+    /* padding: 10px 10px; */
+    margin: 0px;
 }
 
 
