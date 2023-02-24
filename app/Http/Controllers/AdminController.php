@@ -50,9 +50,7 @@ class AdminController extends Controller
 
 
     public function Adminlogin(Request $request){
-        if($request->status != "active"){
-            return redirect()->back()->with('fail','Your Account has been suspended. Contact The Support Team');
-        } else{
+
         $request->validate([
             'email' => 'required',
             'password' => 'required'
@@ -61,7 +59,9 @@ class AdminController extends Controller
 
         if(!$admin){
             return back()->with('fail','Invalid Credentials');
-        }else{
+        }elseif($admin->status != 'active'){
+            return redirect()->back()->with('fail','Your Account has been suspended. Contact The Support Team');
+        } else{
                 if($request->password == $admin->password){
                     $request->session()->put('LoggedUser',$admin->id);
                     return redirect()->route('Dashboard');
@@ -70,7 +70,6 @@ class AdminController extends Controller
                 }
             }
         }
-    }
 
 
 
