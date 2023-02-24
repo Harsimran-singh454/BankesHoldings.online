@@ -41,8 +41,7 @@ class ClientsController extends Controller
 
     public function cltloginpage(){
         if(session('LoggedUser')){
-            return view('Customers/clientprofile');
-            // return redirect()->route('Dashboard');
+            return redirect()->route('Dashboard');
         } elseif(session('LoggedClient')){
             return redirect()->route('clientprofile');
         } else{
