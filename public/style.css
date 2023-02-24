@@ -54,14 +54,20 @@ nav .nav-dropdown-menu{
 
 @media screen and (max-width:480px){
     nav .nav-dropdown-menu{
-        margin-top: 55px;
-        margin-left: 0px;
+        position: absolute;
+        top: 5em;
+        right: 0em;
+
+    }
+    nav .nav-dropdown-menu ul{
+        display: flex;
+        flex-direction: column;
+        padding-top: 23px;
+        padding-bottom: 27px;
     }
 
     nav .nav-dropdown-menu ul li{
-        display: inline;
-        /* margin: 10em 0px;
-        padding: 10px 5px; */
+        margin: 1em;
     }
 }
 
@@ -75,6 +81,7 @@ nav .nav-dropdown-menu ul{
     padding: 10px;
     color: black;
     background-color: white;
+    border-radius: 20px;
 }
 
 nav .nav-dropdown-menu ul li{
