@@ -51,6 +51,16 @@
                     <label for="password"> Password: </label>
                     <input type="password" name="password" id="password" value="{{$Admin->password}}">
                     </div>
+
+
+                    <div class="status">
+                        <h3>Status:</h3>
+                        <label class="switch">
+                            <input type="checkbox" name="status" value="active">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+
                     <input class="log-btn" value="Save" type="submit">
 
                 </div>

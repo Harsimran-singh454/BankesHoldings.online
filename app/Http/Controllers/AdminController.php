@@ -26,7 +26,7 @@ class AdminController extends Controller
 
         $create = admin::create($request->all());
         if($create){
-            return view('Admin.AdminLogin')->with('Success','The Admin Has Been Created Successfully');
+        return redirect()->back()->with('Success','The Admin Has Been Created Successfully');
         } else {
             return back()->with('Fail','Something went wrong');
         }
@@ -37,7 +37,8 @@ class AdminController extends Controller
     public function Admlogin(){
         if(session('LoggedClient')){
             return redirect()->route('clientprofile');
-        } elseif(session('LoggedUser')){
+        }
+        elseif(session('LoggedUser')){
             return redirect()->route('Dashboard');
         }
         else{
@@ -49,7 +50,9 @@ class AdminController extends Controller
 
 
     public function Adminlogin(Request $request){
-
+        if($request->status != "active"){
+            return redirect()->back()->with('fail','Your Account has been suspended. Contact The Support Team');
+        } else{
         $request->validate([
             'email' => 'required',
             'password' => 'required'
@@ -66,6 +69,7 @@ class AdminController extends Controller
                     return back()->with('fail','Incorrect Password');
                 }
             }
+        }
     }
 
 
@@ -108,6 +112,7 @@ class AdminController extends Controller
             $data->email = $req->email;
             $data->role = $req->role;
             $data->password = $req->password;
+            $data->status = $req->status;
             $data->save();
 
             return redirect()->route('Dashboard');

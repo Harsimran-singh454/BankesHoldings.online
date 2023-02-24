@@ -64,7 +64,7 @@ class ClientsController extends Controller
         }else{
                 if($request->password == $admin->password){
                     $request->session()->put('LoggedClient',$admin->id);
-                    return redirect('clientprofile');
+                    return redirect()->route('clientprofile');
                 } else {
                     return back()->with('fail','Incorrect Password');
                 }
