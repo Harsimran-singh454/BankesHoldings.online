@@ -9,14 +9,15 @@
         <form action="{{ route('clientlogin') }}" method="POST">
 
             @if(Session::get('Success'))
-            <p style="background-color:rgba(119, 255, 119, 0.578); padding:15px 10px">{{Session::get('Success')}}</p>
+            <p style="background-color:rgba(119, 255, 119, 0.578); padding:15px 10px;">{{Session::get('Success')}}</p>
+
             @endif
 
             @if(Session::get('fail'))
-            <p style="color: white; background-color:rgba(255, 0, 0, 0.512); padding:15px 10px">{{Session::get('fail')}}</p>
+            <p style="color: white; background-color:rgba(255, 0, 0, 0.512);
+                    padding:3em 0px; display:flex; justify-content: center;
+                    margin: 10px auto; border-radius:30px">{{Session::get('fail')}}</p>
             @endif
-
-        @endif
         @csrf
 
             <div class="log-form-elements">
