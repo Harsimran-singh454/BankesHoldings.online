@@ -8,12 +8,14 @@
         <h1>Self Serve Login</h1>
         <form action="{{ route('clientlogin') }}" method="POST">
 
-        @if(Session::get('Success'))
-        <p style="background-color:lightgreen; padding:10px">{{Session::get('Success')}}</p>
-        @endif
+            @if(Session::get('Success'))
+            <p style="background-color:rgba(119, 255, 119, 0.578); padding:15px 10px">{{Session::get('Success')}}</p>
+            @endif
 
-        @if(Session::get('fail'))
-        <p style="background-color:red; padding:10px">{{Session::get('fail')}}</p>
+            @if(Session::get('fail'))
+            <p style="color: white; background-color:rgba(255, 0, 0, 0.512); padding:15px 10px">{{Session::get('fail')}}</p>
+            @endif
+
         @endif
         @csrf
 

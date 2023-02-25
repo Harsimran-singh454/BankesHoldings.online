@@ -60,7 +60,7 @@ class AdminController extends Controller
         if(!$admin){
             return back()->with('fail','Invalid Credentials');
         }elseif($admin->status != 'active'){
-            return redirect()->back()->with('fail','Your Account has been suspended. Contact The Support Team');
+            return redirect()->back()->with('fail','Your Account has been suspended. Contact our Support Team - (866)-981-9331)');
         } else{
                 if($request->password == $admin->password){
                     $request->session()->put('LoggedUser',$admin->id);
