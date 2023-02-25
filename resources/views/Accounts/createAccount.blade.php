@@ -114,6 +114,7 @@
             </fieldset>
         </div>
 
+
             <div class = "other">
                     <label for="modified_by">Created By:</label>
                     <input type="text" required name="modified_by" id="modified_by" value="{{old('modified_by')}}">
@@ -121,6 +122,34 @@
                     <input type="submit" value="Save"class="sub-btn">
                 </div>
             </form>
+{{--
+
+            <div class="remarks">
+                <form action="{{Route('addMessage')}}" method="post">
+                    @csrf
+                    <fieldset>
+                        <legend><h2>Add Comment</h2></legend>
+                        <div>
+                            <label for="added_by">Who's writing?: </label>
+                            <input type="text" name="added_by" id="" placeholder="your name here...">
+                        </div>
+
+                        <div>
+                            <label for="message">Comment:</label>
+                            <textarea style="margin-left:2.5em" name="message" id="msg" cols="30" rows="15" placeholder="Type comment here..."></textarea>
+                        </div>
+                        <div>
+                            <label for="time">Date-time:</label>
+                            <input name="time" type="text" value="{{  now("America/Toronto")->toDateTimeString() }}" disabled>
+                        </div>
+                        <div>
+                        <input type="submit" value="Add" class="sub-btn">
+                        </div>
+                    </fieldset>
+                </form>
+            </div> --}}
+
+
             @foreach ($errors->all() as $error)
             {{ $error }}
             @endforeach

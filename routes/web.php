@@ -3,6 +3,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\paymentsController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -89,3 +90,10 @@ Route::Post('/editC/{id}',[ClientsController::class,'grantAccessClient'])->name(
 
 
 Route::get('/paymentscard',[paymentsController::class,'paymentsCard'])->name('paymentsCard');
+
+
+
+
+
+//  ------------------------- Messages -------------------------
+Route::post('addmsg/{id}',[MessageController::class,'addMessage'])->name('addMessage');

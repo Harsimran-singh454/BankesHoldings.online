@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\account;
 use App\Models\admin;
+use App\Models\msg;
 
 
 class AccountController extends Controller
@@ -63,7 +64,9 @@ class AccountController extends Controller
         if($req->pin == $pin){
             $data = admin::where('id','=',session('LoggedUser'))->first();
             $acc = account::find($id);
-            return view('Accounts.updateAccount', ['account'=>$acc, 'info'=>$data]);
+            $msg = msg::where('acc_id',$id)->first();
+            //return $msg;
+            return view('Accounts.updateAccount', ['mesg'=>$msg,'account'=>$acc, 'info'=>$data]);
         }else{
             return redirect()->back()->with('fail')->withInput();
         }
@@ -73,7 +76,9 @@ class AccountController extends Controller
     {
         $data = admin::where('id','=',session('LoggedUser'))->first();
         $acc = account::find($id);
-        return view('Accounts.updateAccount', ['account'=>$acc, 'info'=>$data]);
+        $msg = msg::where('acc_id','=',$id);
+
+        return view('Accounts.updateAccount', ['account'=>$acc, 'info'=>$data, 'mesg'=>$msg]);
     }
 
 

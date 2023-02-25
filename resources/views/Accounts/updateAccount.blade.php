@@ -37,12 +37,12 @@
                         <label for="pin">4-Digit Pin:</label>
                         <input type="number" maxlength="4" name="pin" id="pin" value="{{$account['pin']}}">
                         <br>
-                </fieldset>
-            </div>
+                    </fieldset>
+                </div>
 
-            <div class = "acc-ownshp">
-                <fieldset>
-                    <legend><h2>Account Ownership</h2></legend>
+                <div class = "acc-ownshp">
+                    <fieldset>
+                        <legend><h2>Account Ownership</h2></legend>
 
                         <label for="account_owner">Account Owner:</label>
                         <input type="text" name="account_owner" id="account_owner" value="{{$account['account_owner']}}">
@@ -63,12 +63,12 @@
                         <label for="rating">Rating:</label>
                         <input type="text" name="rating" id="rating" value="{{$account['rating']}}">
                         <br>
-                </fieldset>
-            </div>
+                    </fieldset>
+                </div>
 
-            <div class = "Billing">
-                <fieldset>
-                    <legend><h2>Billing</h2></legend>
+                <div class = "Billing">
+                    <fieldset>
+                        <legend><h2>Billing</h2></legend>
                         <label for="current_balance">Current Balance:</label>
                         <input type="number" name="current_balance" id="current_balance" step="any" value="{{$account['current_balance']}}">
                         <br>
@@ -92,27 +92,58 @@
                             <label for="arrangements_pending" style="margin-right:30px">Arrangements Pending :</label>
 
                             <p>Yes</p>
-                            <input type="radio" name="arrangements_pending" value="Yes" id=""checked>
+                            <input type="radio" name="arrangements_pending" value="Yes" id="" checked>
 
                             <p>No</p>
                             <input type="radio" name="arrangements_pending" value="No" id="">
 
                             <br>
                         </div>
-                </fieldset>
-            </div>
-                    <div class = "other">
-                        <label for="modified_by">Modified By:</label>
-                        <input type="text" name="modified_by" id="modified_by" required value="{{old('modified_by')}}">
-                        <br>
-                        <input type="submit" value="Save"class="sub-btn">
-                    </div>
+                    </fieldset>
+                </div>
+
+
+
+
+                <div class = "other">
+                    <label for="modified_by">Modified By:</label>
+                    <input type="text" name="modified_by" id="modified_by" required value="{{$account['modified_by']}}">
+                    <br>
+                    <input type="submit" value="Save"class="sub-btn">
+                </div>
 
                 </form>
+
+
+                <div class="remarks">
+                    <form action="{{ route('addMessage', $mesg['id']) }}" method="POST">
+                        @csrf
+                        <fieldset>
+                        <legend><h2>Comment</h2></legend>
+                        <p style="color: grey; text-align:center">This comment was added on - {{$mesg->time}}</p>
+                        <div>
+                            <label for="added_by">Who's writing?: </label>
+                            <input type="text" name="added_by" id="" placeholder="your name here..." value="{{$mesg['added_by']}}">
+                        </div>
+                        <div>
+                            <label for="remarks">Comment:</label>
+                            <textarea name="remarks" id="msg" cols="90" rows="7" placeholder="Type comment here..." value="{{$mesg['remarks']}}">{{$mesg['remarks']}}</textarea>
+                        </div>
+                        <div>
+                            <label for="time">Date-time:</label>
+                            <input name="time" type="text" value="{{now("America/Toronto")->toDateTimeString()}}">
+                        </div>
+                        <div>
+                            <input type="submit" value="Add" class="sub-btn">
+                        </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+
                 @foreach ($errors->all() as $error)
                 {{ $error }}
                 @endforeach
-
         </div>
     </body>
     @include("_partials.footer")
