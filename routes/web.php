@@ -97,3 +97,4 @@ Route::get('/paymentscard',[paymentsController::class,'paymentsCard'])->name('pa
 
 //  ------------------------- Messages -------------------------
 Route::post('addmsg/{id}',[MessageController::class,'addMessage'])->name('addMessage');
+//Route::get('CommentForm',[MessageController::class,'newMsg'])->name('newMsg');

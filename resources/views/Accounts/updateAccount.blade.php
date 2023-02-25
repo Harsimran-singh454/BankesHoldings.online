@@ -114,9 +114,8 @@
 
                 </form>
 
-
                 <div class="remarks">
-                    <form action="{{ route('addMessage', $mesg['id']) }}" method="POST">
+                    <form action="{{ route('addMessage', $mesg->id) }}" method="POST">
                         @csrf
                         <fieldset>
                         <legend><h2>Comment</h2></legend>
@@ -139,7 +138,6 @@
                         </fieldset>
                     </form>
                 </div>
-
 
                 @foreach ($errors->all() as $error)
                 {{ $error }}

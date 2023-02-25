@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
+
+
+
     public function addMessage(Request $req, $id){
         $data = msg::find($id);
         //return $data;
@@ -23,7 +26,7 @@ class MessageController extends Controller
             $newData->remarks = $req->remarks;
             $newData->time = $req->time;
             $newData->save();
-            return $newData;
+            return redirect()->route('Dashboard');
         }
     }
 }

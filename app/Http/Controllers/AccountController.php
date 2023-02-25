@@ -38,7 +38,7 @@ class AccountController extends Controller
 
         $create = account::create($request->all());
         if($create){
-            return redirect()->route('accountRegisterpage')->with('success','The data has been added');
+            return view('Comments.newMsg',['account'=>$create]);
         } else{
             return redirect()->route('accountRegisterpage')->with('fail','Somethings is wrong.');
         }
