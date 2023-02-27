@@ -42,8 +42,8 @@
                                     font-size: 19px;"
                                     id="account_number" name="role" value="{{$Admin->role}}">
                             <option value="">-- Choose role -- </option>
-                            <option value="Superadmin">Superadmin</option>
-                            <option value="">Just admin</option>
+                            <option value="Superadmin">Admin L1</option>
+                            <option value="">Admin L1</option>
                     </select>
                     </div>
 
