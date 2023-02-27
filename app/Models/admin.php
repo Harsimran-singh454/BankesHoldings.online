@@ -14,8 +14,6 @@ class admin extends Authenticable implements MustVerifyEmail
     public function verifyadmin(){
         return $this->hasOne('App\Models\verifyadmin');
     }
-
-
         protected $table = 'admin';
         public $timestamps = true;
         protected $fillable = [

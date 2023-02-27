@@ -17,7 +17,7 @@
                 <td>{{$acc['account_number']}}</td>
                 <td>{{$acc['account_name']}}</td>
                 <td>
-                    <a href="{{route('updateaccountpage', $acc['id'])}}"><button>View</button></a>
+                    <a href="{{route('accountDataAccessForm', $acc['id'])}}"><button>View</button></a>
                     <a href="{{route('deleteaccount', $acc['id'])}}"><button>Delete</button></a>
                 </td>
             </tr>

@@ -71,7 +71,7 @@
                 </div>
                 <div class="items">
                     <ol style="list-style: none; text-align:center; text-decoration: none">
-                        <a href="{{route('paymentsCard')}}"target="_blank"><li><h4>Collecting Payments</h4></li></a>
+                        <a href="{{route('paymentsCard')}}"target="_blank"><li><h4>Collect $</h4></li></a>
                         <a href="https://cliq.zoho.com/"target="_blank"><li><h4>Cliq</h4></li></a>
                         <a href="https://invoice.zoho.com/"target="_blank"><li><h4>Clock in / Clock out</h4></li></a>
                         <a href="https://saleiq.zoho.com/"target="_blank"><li><h4>Sales IQ (Live chat)</h4></li></a>

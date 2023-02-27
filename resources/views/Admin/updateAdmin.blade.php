@@ -34,7 +34,7 @@
 
                     <div>
                     <label for="role">Role:</label>
-                    <select style="margin:10px;
+                    <select required style="margin:10px;
                                     padding:20px;
                                     border-radius:20px;
                                     width:500px;
