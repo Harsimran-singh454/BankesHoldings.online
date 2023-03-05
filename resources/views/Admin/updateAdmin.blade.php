@@ -43,7 +43,7 @@
                                     id="account_number" name="role" value="{{$Admin->role}}">
                             <option value="">-- Choose role -- </option>
                             <option value="Superadmin">Admin L1</option>
-                            <option value="">Admin L1</option>
+                            <option value="">Admin L2</option>
                     </select>
                     </div>
 
