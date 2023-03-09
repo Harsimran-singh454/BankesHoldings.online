@@ -121,8 +121,9 @@ class ClientsController extends Controller
     }
 
     public function grantAccessClient(Request $req, $id){
-        $pin = 1234;
-        if($req->pin == $pin){
+        $l1pin = 5401;
+        $l2pin = 5301;
+        if($req->pin == $l1pin || $req->pin == $l2pin){
             $user = clients::find($id);
             $acc = account::all();
             return view('Customers.updateClient', ['users'=>$user, 'acc' => $acc]);
@@ -145,7 +146,7 @@ class ClientsController extends Controller
         $data=clients::find($id);
         $data->name = $req->name;
         $data->email = $req->email;
-        $data->account_number = $req->account_number;
+        $data->password = $req->password;
         $data->save();
 
         return redirect()->route('clientlist');
@@ -195,6 +196,18 @@ class ClientsController extends Controller
         $data->password = $req->password;
         $data->save();
         return redirect()->route('clientprofile')->with('success','Password Has Been Updated');
+        }
+    }
+
+
+    public function search(Request $request){
+
+        $search = $request->input();
+        $data = Clients::where('name', 'LIKE', "%$request->lookClient%")->first();
+        if($data){
+            return view('Customers.searchResult',['data' => $data]);
+        } else{
+            return redirect()->back()->with('fail','No Records Found.');
         }
     }
 

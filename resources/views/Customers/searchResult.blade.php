@@ -1,19 +1,8 @@
 @include('_partials.header');
 <title>Clients List</title>
 
-<h1 style="text-align:center; margin:50px">List of Clients</h1>
+<h1 style="text-align:center; margin:50px">Search Result</h1>
 
-<form action="{{ route('searchclnt') }}" method="post">
-    @csrf
-<div class = "client-search">
-    <label for="lookClient">Search Client: </label>
-    <input type="text" name="lookClient" placeholder="Enter the Client's name...">
-    <input id="search-btn" type="submit" value="search">
-</div>
-@if (Session::has('fail'))
-    <p style="text-align:center">{{Session('fail')}}</p>
-@endif
-</form>
 
 <table class="clients-table">
     <thead>
@@ -26,8 +15,6 @@
     </thead>
 
     <tbody>
-
-        @foreach ($clist as $data)
             <tr>
                 <td>{{$data['account_number']}}</td>
                 <td>{{$data['name']}}</td>
@@ -37,9 +24,6 @@
                     <a href="{{ route('deleteclient', $data['id']) }}"><button>Delete</button></a>
                 </td>
             </tr>
-        @endforeach
-
-
     </tbody>
 </table>
 

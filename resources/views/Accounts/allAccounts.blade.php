@@ -2,6 +2,20 @@
 <title>Accounts List</title>
 
 <h1 style="text-align:center; margin:50px">List of Accounts</h1>
+
+<form action="{{ route('searchacc') }}" method="post">
+    @csrf
+<div class = "client-search">
+    <label for="lookAccount">Search Account: </label>
+    <input type="text" name="lookAccount" placeholder="Enter the account number...">
+    <input id="search-btn" type="submit" value="search">
+</div>
+@if (Session::has('fail'))
+    <p style="text-align:center">{{Session('fail')}}</p>
+@endif
+</form>
+
+
 <table class="clients-table">
     <thead>
         <tr>

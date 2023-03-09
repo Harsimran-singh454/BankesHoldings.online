@@ -44,7 +44,7 @@
                     <br>
 
                     <label for="pin">4-Digit Pin:</label>
-                    <input type="number" maxlength="4" name="pin" id="pin" value="{{old('pin')}}">
+                    <input type="number" maxlength="6" minlength="4"  name="pin" id="pin" value="{{old('pin')}}">
                     <br>
 
             </fieldset>
@@ -107,9 +107,17 @@
 
                         <p>No</p>
                         <input type="radio" name="arrangements_pending" value="No" id="">
-
                         <br>
+
                     </div>
+
+                    <label for="arrangement_date"> Arrangement Date :</label>
+                    <input type="date" name="arrangement_date" value="{{old('arrangement_date')}}">
+                    <br>
+
+                    <label for="arrangement_amount"> Arrangement Amount :</label>
+                    <input type="number" name="arrangement_amount" step="any" value="{{old('arrangement_amount')}}">
+                    <br>
 
             </fieldset>
         </div>

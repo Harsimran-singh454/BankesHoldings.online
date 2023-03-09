@@ -31,8 +31,9 @@ class AccountController extends Controller
             'amount_past_due' => 'required',
             'unbilled_charges' => 'required',
             'arrangements_pending' => '',
+            'arrangement_amount' => '',
             'address' => 'required',
-            'pin' => 'required | max:4',
+            'pin' => 'required | max:6 | min:4',
             'DOB' => 'required',
         ]);
 
@@ -60,8 +61,9 @@ class AccountController extends Controller
     }
 
     public function grantAccessAccount(Request $req, $id){
-        $pin = 1234;
-        if($req->pin == $pin){
+        $l1pin = 5401;
+        $l2pin = 5301;
+        if($req->pin == $l1pin || $req->pin == $l2pin){
             $data = admin::where('id','=',session('LoggedUser'))->first();
             $acc = account::find($id);
             $msg = msg::where('acc_id',$id)->first();
@@ -81,7 +83,6 @@ class AccountController extends Controller
         return view('Accounts.updateAccount', ['account'=>$acc, 'info'=>$data, 'mesg'=>$msg]);
     }
 
-
     public function updateaccount(Request $req, $id)
     {
         $data=account::find($id);
@@ -89,6 +90,8 @@ class AccountController extends Controller
         $data->account_name = $req->account_name;
         $data->account_type = $req->account_type;
         $data->account_number = $req->account_number;
+        $data->pin = $req->pin;
+        $data->DOB = $req->DOB;
         $data->status = $req->status;
         $data->rating = $req->rating;
         $data->phone_number = $req->phone_number;
@@ -100,7 +103,24 @@ class AccountController extends Controller
         $data->amount_past_due = $req->amount_past_due;
         $data->unbilled_charges = $req->unbilled_charges;
         $data->arrangements_pending = $req->arrangements_pending;
+        $data->arrangement_date = $req->arrangement_date;
+        $data->arrangement_amount = $req->arrangement_amount;
         $data->address = $req->address;
+        $data->save();
+        return redirect()->route('accountlist');
+    }
+
+    public function updateaccountl2(Request $req, $id)
+    {
+        $data=account::find($id);
+
+        $data->pin = $req->pin;
+        $data->phone_number = $req->phone_number;
+        $data->arrangements_pending = $req->arrangements_pending;
+        $data->arrangement_date = $req->arrangement_date;
+        $data->arrangement_amount = $req->arrangement_amount;
+        $data->address = $req->address;
+
         $data->save();
         return redirect()->route('accountlist');
     }
@@ -111,5 +131,22 @@ class AccountController extends Controller
         $acc = account::find($id);
         $acc->delete();
         return redirect()->back();
+    }
+
+
+
+
+    public function search(Request $request){
+
+        $search = $request->input();
+        $accnum = account::where('account_number', '=', $request->lookAccount)->first();
+        $owner = account::where('account_owner','LIKE', "%$request->lookAccount%")->first();
+        if($accnum){
+            return view('Accounts.searchResult',['data' => $accnum]);
+        }elseif($owner){
+            return view('Accounts.searchResult',['data' => $owner]);
+        }else{
+            return redirect()->back()->with('fail','No records found');
+        }
     }
 }
